@@ -1,0 +1,9 @@
+{
+  "name": "ai-native-project",
+  "version": "1.0.0",
+  "description": "Set up a rigorous, transcript-aware AI-native project architecture from scratch. Spec-first, memory-driven, adversarially reviewed.",
+  "author": "FuzulsFriend",
+  "license": "MIT",
+  "tags": ["architecture", "project-setup", "claude-code", "memory", "spec-first", "adversarial-review"],
+  "skill": "SKILL.md"
+}
