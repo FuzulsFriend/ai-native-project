@@ -1,0 +1,45 @@
+# Plan Memory: Phase 2 - Subscription UI
+
+**Status:** in-progress
+**Started:** 2026-06-16
+**Last updated:** 2026-06-18
+**Task size:** M
+**Execution mode:** this session
+**Ralph Loop Status:** not-running
+
+## ACTIVE TASK (WIP = 1)
+Building PlanSelector.tsx component - the card grid showing available subscription tiers
+
+## Resume point
+LAST COMPLETED: Created the basic card layout with plan name and price display
+OPEN DECISION: Whether to show monthly/annual toggle or annual-only for MVP
+NEXT ACTION: Add the CTA button to each card that calls handleSelectPlan(planId)
+
+## Completed steps
+- Stripe products + prices configured in test mode - done 2026-06-16
+- Webhook handler /api/stripe/webhook - done 2026-06-17
+- Customer creation on signup - done 2026-06-17
+- PlanSelector.tsx skeleton - done 2026-06-18
+
+## Remaining steps
+- [ ] PlanSelector CTA button + handleSelectPlan handler
+- [ ] Checkout session creation endpoint
+- [ ] Success/cancel redirect pages
+- [ ] Stripe Customer Portal link in account settings
+- [ ] Webhook: handle subscription.updated and subscription.deleted events
+
+## Skills in use this phase
+- `frontend-design` - for the card component visual design
+- `systematic-debugging` - if Stripe integration breaks
+
+## Decisions made mid-plan
+| Date | Decision | Rationale |
+|------|----------|-----------|
+| 2026-06-17 | Use Stripe Checkout instead of custom payment form | Faster, PCI compliant, battle-tested |
+
+## Working notes (volatile)
+Stripe test cards: 4242 4242 4242 4242 (success), 4000 0000 0000 9995 (decline)
+Local webhook testing: stripe listen --forward-to localhost:3000/api/stripe/webhook
+
+## Blockers
+- None

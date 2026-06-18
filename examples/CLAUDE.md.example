@@ -1,0 +1,42 @@
+# My SaaS App - Claude Project Constitution
+
+Building a subscription management tool for small businesses. Success metric: user can create and manage a subscription plan in under 2 minutes.
+
+## Communication Style
+- Level: comfortable
+- Style: explain non-obvious only
+- Notes: knows React, new to Stripe API
+
+## Core Rules
+0. **Living Memory:** Read `memory.md` right after this file.
+1. **Spec-First:** No code before spec alignment.
+2. **Never Assume - Always Verify:** Ask when unclear. Double-check before: deleting data, calling external APIs, changing auth, destructive git ops.
+3. **Gate Before Handoff:** DEFINED deliverables pass the full gate sequence.
+4. **Single Source of Truth:** Each fact in exactly one file.
+5. **Small PRs:** One concern per PR, reviewable in under 10 minutes.
+6. **Methodical pace:** Verify each step before starting the next.
+7. **Context Discipline:** /compact at ~60% usage, /clear between unrelated tasks.
+
+## Project Map
+- `memory.md` - Session state and decisions
+- `docs/implementation/ROADMAP.md` - Phase status board
+- `docs/specs/` - Approved designs
+- `docs/plans/` - Phase plans and trackers
+- `docs/cookbooks/` - QA and review procedures
+- `deliverables/` - Final outputs
+
+## Verification Protocol
+- Runnable artifacts (API, UI): FULL gate (adversarial review + automated QA + user QA + commit)
+- Documents (specs, plans): LIGHTWEIGHT gate (adversarial review + commit)
+
+## Hard Constraints
+- TypeScript only, no JavaScript
+- Stripe API v3+ only
+- No storing raw card data anywhere
+- Mobile-first, 375px minimum
+
+## Sensitive Operations (always double-check)
+- Subscription cancellations or deletions
+- Any Stripe API write calls
+- Database migrations
+- Changes to auth/permissions logic

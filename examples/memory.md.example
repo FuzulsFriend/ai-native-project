@@ -1,0 +1,28 @@
+# Project Memory - My SaaS App (living document)
+
+> Read at session start after CLAUDE.md. Update whenever decisions are made or state changes.
+> Rules live in CLAUDE.md only - this file contains state, not rules.
+
+## Current state (last verified: 2026-06-18)
+- Phase: 2 - Subscription management UI
+- Stripe webhook handler complete and tested
+- Working on the plan management page next
+
+## Active task (WIP = 1)
+Building the plan selection UI component - /src/components/PlanSelector.tsx
+
+## Decisions log (last verified: 2026-06-18)
+| Date | Decision | Rationale |
+|------|----------|-----------|
+| 2026-06-17 | Use Stripe Customer Portal for billing management | Avoids building custom billing UI, PCI compliant |
+| 2026-06-16 | Zustand for state management, not Redux | Simpler API, less boilerplate for this scale |
+| 2026-06-15 | Deploy on Vercel, DB on PlanetScale | Both have good free tiers for early stage |
+
+## Learnings and gotchas (last verified: 2026-06-18)
+- Stripe webhooks require raw body parsing - do NOT use express.json() on the webhook route
+- PlanetScale schema changes need a separate deploy step before code deploy
+- The Stripe test mode key starts with sk_test_ - never use live keys in development
+
+## Open questions
+- Do we need a free tier or is the paid-only model fine for launch?
+- Should plan upgrades be prorated or take effect next billing cycle?
